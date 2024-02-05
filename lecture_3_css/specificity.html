@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Specificity</title>
+    <style>
+
+        p.c1.c2.c3.c4.c5.c6.c7.c8.c9.c10.c11{
+            background: white;
+            color: mediumpurple;
+        }
+        .c1.c2{
+            color: purple;
+        }
+        .c1{
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <!-- Note that the incline style always overrides the class even when the specificity score is "more" -->
+    <p class="c1 c2 c3 c4 c5 c6 c7 c7 c8 c9 c10 c11" style="color: red; background: yellow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci dicta dignissimos ea eaque eligendi, eum, fuga illo itaque magni, molestiae mollitia placeat quas quibusdam quisquam quod sit veniam voluptas?</p>
+
+<!--  .c2.c2 has score of 20 while .c1 has score of 10 -->
+    <p class="c1 c2 c3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut ducimus reprehenderit saepe vel! Blanditiis corporis exercitationem facere nemo repellat totam voluptate. Commodi deserunt eaque odio possimus qui rem! Quo?</p>
+</body>
+</html>

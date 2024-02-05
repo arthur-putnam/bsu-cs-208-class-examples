@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Layout</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        :root {
+            // https://colorffy.com/css-generator
+            --color-primary-a0:  #ffffff;
+            --color-primary-a10:  #edf6ec;
+            --color-primary-a20:  #daeed9;
+            --color-primary-a30:  #c8e5c6;
+            --color-primary-a50:  #b5dcb3;
+            --color-primary-a60:  #84a083;
+            --color-primary-a70:  #576856;
+            --color-primary-a80:  #2d352d;
+            --color-primary-a90:  #000000;
+        }
+
+        .grid-container {
+            height: 100vh;
+            display: grid;
+            grid-template-rows: minmax(1px, auto) 1fr minmax(1px, auto);
+            grid-template-columns: 200px 3fr;
+        }
+        h1 {
+            grid-row: 1;
+            grid-column: span 2;
+            background-color: var(--color-primary-a70);
+            text-align: center;
+        }
+        aside{
+            background-color: var(--color-primary-a60);
+        }
+        main{
+
+        }
+        footer{
+            grid-column: span 2;
+            /*grid-row: 2;*/
+            background-color: var(--color-primary-a70);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <h1>This is Web Page Main title</h1>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="">Page 1</a></li>
+                    <li><a href="">Page 2</a></li>
+                    <li><a href="">Page 3</a></li>
+                    <li><a href="">Page 4</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi est laborum maxime, nobis obcaecati perferendis quaerat reprehenderit tempora tempore? A amet blanditiis dignissimos enim fugiat itaque nesciunt nostrum pariatur quos?</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+            <div>Example content</div>
+        </main>
+        <footer>My Footer</footer>
+    </div>
+</body>
+</html>
