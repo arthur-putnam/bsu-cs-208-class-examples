@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Layout</title>
+    <style>
+        :root{
+            // https://colorffy.com/css-generator
+            --color-primary-a0:  #ffffff;
+            --color-primary-a10:  #edf6ec;
+            --color-primary-a20:  #daeed9;
+            --color-primary-a30:  #c8e5c6;
+            --color-primary-a50:  #b5dcb3;
+            --color-primary-a60:  #84a083;
+            --color-primary-a70:  #576856;
+            --color-primary-a80:  #2d352d;
+            --color-primary-a90:  #000000;
+        }
+        *{
+            margin: 0;
+        }
+        .page-layout{
+            width: 100%;
+            border: 0;
+        }
+        .nav-container{
+            width: 200px;
+            min-width: 200px;
+            max-width: 200px;
+            overflow: hidden;
+            background: var(--color-primary-a60);
+            vertical-align: top;
+        }
+        .main-container{
+            overflow: hidden;
+            vertical-align: top;
+            height: 100%;
+            width: auto;
+        }
+        table{
+            height: 100vh;
+            border-spacing: 0;
+        }
+        table, tr,td {
+            border-collapse: collapse;
+            padding: 0;
+        }
+        tr:first-child{
+            background: var(--color-primary-a70);
+            text-align: center;
+        }
+        tr:last-of-type td {
+            background: var(--color-primary-a70);
+        }
+        footer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<table class="page-layout" >
+    <tr class="header-row">
+        <td colspan="2">
+            <h1>This is Web Page Main title</h1>
+        </td>
+    </tr>
+    <tr >
+        <td class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="">Page 1</a></li>
+                    <li><a href="">Page 2</a></li>
+                    <li><a href="">Page 3</a></li>
+                    <li><a href="">Page 4</a></li>
+                </ul>
+            </nav>
+        </td>
+        <td class="main-container">
+            <main>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi est laborum maxime, nobis obcaecati perferendis quaerat reprehenderit tempora tempore? A amet blanditiis dignissimos enim fugiat itaque nesciunt nostrum pariatur quos?</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+                <div>Example content</div>
+            </main>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <footer>My Footer</footer>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
