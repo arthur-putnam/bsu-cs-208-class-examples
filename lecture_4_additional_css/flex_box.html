@@ -7,28 +7,93 @@
         * {
             margin: 0;
         }
-
-        img{
-            width: 300px;
-            /*float: right;*/
+        .square-content{
+            width: 100px;
+            height: 100px;
+            background: #d9c8fe;
         }
-        .container{
+        .rectangle-content-1{
+            width: 210px;
+            height: 100px;
+            background: #b093fb;
+        }
+        .rectangle-content-2{
+            width: 100px;
+            height: 210px;
+            background: #8060f6;
+        }
+        .square-content, .rectangle-content-1, .rectangle-content-2{
+            margin: 5px;
+        }
+        .flex-row{
             display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            width: 800px;
-
+            flex-direction: row;
+        }
+        .flex-column{
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-h-center{
+            justify-content: center;
+        }
+        .flex-v-center{
+            align-items: center;
+        }
+        .flex-wrap{
+            flex-wrap: wrap;
         }
     </style>
 </head>
 <body>
 
-
-    <div class="container">
-        <img src="../images/img1.jpg" alt="">
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus eaque enim esse est iste iure ratione tempore ullam. Alias consequatur eligendi eos facere odit omnis reiciendis rem ullam ut?</p>
+    <h2>Flex Row</h2>
+    <div class="flex-row">
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
     </div>
 
+    <h2>Flex Row + Flex Wrap</h2>
+    <div class="flex-row flex-wrap">
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+    </div>
+
+    <h2>Flex Row + Flex Wrap + h Center</h2>
+    <div class="flex-row flex-wrap flex-h-center">
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+    </div>
+
+    <h2>Flex Row (mixed) + Flex Wrap + h Center</h2>
+    <div class="flex-row flex-wrap flex-h-center">
+        <div class="square-content"></div>
+        <div class="rectangle-content-1"></div>
+        <div class="square-content"></div>
+        <div class="rectangle-content-2"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+    </div>
+
+    <h2>Flex Row (mixed) + Flex Wrap + h+v Center</h2>
+    <div class="flex-row flex-wrap flex-h-center flex-v-center">
+        <div class="square-content"></div>
+        <div class="rectangle-content-1"></div>
+        <div class="square-content"></div>
+        <div class="rectangle-content-2"></div>
+        <div class="square-content"></div>
+        <div class="square-content"></div>
+    </div>
 </body>
 </html>

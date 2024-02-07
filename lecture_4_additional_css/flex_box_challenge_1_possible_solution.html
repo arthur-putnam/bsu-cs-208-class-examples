@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Flex Box Challenge 1</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .square-content{
+            width: 100px;
+            height: 100px;
+            background: #d9c8fe;
+        }
+        .rectangle-content-1{
+            width: 210px;
+            height: 100px;
+            background: #b093fb;
+        }
+        .rectangle-content-2{
+            width: 100px;
+            height: 210px;
+            background: #8060f6;
+        }
+        .square-content, .rectangle-content-1, .rectangle-content-2{
+            margin: 5px;
+        }
+        .flex-row{
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-column{
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-h-center{
+            justify-content: center;
+        }
+        .flex-v-center{
+            align-items: center;
+        }
+        .flex-wrap{
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-row flex-h-center">
+        <h2>Flex Box Challenge 1</h2>
+    </div>
+    <div class="flex-row flex-h-center">
+        <div class="rectangle-content-2"></div>
+        <div class="flex-column">
+            <div class="flex-row">
+                <div class="square-content"></div>
+                <div class="square-content"></div>
+            </div>
+            <div class="rectangle-content-1"></div>
+        </div>
+        <div class="rectangle-content-2"></div>
+    </div>
+</body>
+</html>
