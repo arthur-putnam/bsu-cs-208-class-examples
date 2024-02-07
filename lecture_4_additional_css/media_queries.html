@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Media Queries</title>
+
+    <style>
+        h1, div{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media screen and (max-width: 800px) {
+            body {
+                background: #84a083;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            body {
+                background: #b5dcb3;
+            }
+        }
+        @media screen {
+            .print-only{
+                display: none;
+            }
+
+        }
+        @media print {
+            body{
+                background-image: url("https://png.pngtree.com/png-vector/20220402/ourmid/pngtree-violation-red-rubber-stamp-on-white-icon-illustration-break-vector-png-image_21881312.png");
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Content!</h1>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit harum quae saepe! Accusamus, aspernatur earum excepturi fugiat natus nihil nulla optio pariatur quaerat qui ratione tempore ut. Et, quas voluptatibus.</div>
+    <div class="print-only">PRINTING THIS DOCUMENT IS A VIOLATION OF THE TERMS AND USE</div>
+</body>
+</html>
