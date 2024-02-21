@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type coercion</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+
+                const inputs = document.querySelectorAll("input");
+                const number_of_students = inputs[0].value;
+                const number_of_teachers = inputs[1].value;
+                const number_of_people = number_of_students + number_of_teachers;
+
+                for (let i=0; i < number_of_people; i++){
+                    const div = document.createElement("div");
+                    div.innerText = "Person "+(i+1)
+                    document.getElementById("people").appendChild(div);
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+
+
+<main class="w3-container w3-center">
+    <form class="w3-container">
+
+        <label>Number of Students</label><br>
+        <input class="w3-margin-bottom" type="text"><br>
+
+        <label>Number of Teachers</label><br>
+        <input class="w3-margin-bottom" type="text"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Number of people</h2>
+    <div id="people"></div>
+</main>
+
+</body>
+</html>
