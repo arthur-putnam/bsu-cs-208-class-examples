@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocking Example</title>
+    <script>
+        function simulateBlockingOperation() {
+            // Simulate a lengthy operation (e.g., fetching data from a server)
+            for (let i = 0; i < 1000000; i++) {
+                // This loop will cause the browser to freeze temporarily
+                console.log(i);
+            }
+        }
+
+        function changeBackgroundColor() {
+            // Generate random values for red, green, and blue components
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            // Set the background color of the document body
+            document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+        }
+    </script>
+</head>
+<body>
+
+
+<h2>Random Background Color Example</h2>
+
+<button onclick="changeBackgroundColor()">Change Background Color</button>
+
+
+<h2>Blocking Example</h2>
+
+<button onclick="simulateBlockingOperation()">Simulate Blocking Operation</button>
+
+<p>Clicking the button above will trigger a blocking operation, causing the browser to freeze temporarily.</p>
+
+</body>
+</html>
