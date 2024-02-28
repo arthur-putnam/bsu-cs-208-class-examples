@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Fetch Example 1</h1>
+<p>This page will make an asynchronous fetch request to the Random User API when loaded. The JavaScript code in the `&lt;script&gt;` block initiates a fetch request to the endpoint 'https://randomuser.me/api/?results=1'. Upon receiving the response, it checks the status and parses the JSON data from the response body. If the status is 200 (OK), it logs the data to the console. If the status is not 200, an error message is logged. This example demonstrates how to fetch data from an external API using the Fetch API without reloading the entire webpage.</p>
+
+<script>
+
+    // Initiating a fetch request to the 'https://randomuser.me/api/?results=1' endpoint
+    const myPromise = fetch('https://randomuser.me/api/?results=1');
+
+    // Handling the successful completion of the fetch operation
+    const jsonPromise = myPromise.then(response => {
+        // Parsing the response body as JSON
+        return response.json();
+    });
+
+    // Handling the successful completion of parsing the JSON response
+    jsonPromise.then(data => {
+        // Logging the parsed JSON data to the console
+        console.log(data);
+    });
+
+</script>
+</body>
+</html>
