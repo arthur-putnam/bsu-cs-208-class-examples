@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://randomuser.me/api/?results=1', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                } else {
+                    console.error('Request failed: ' + xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    </script>
+</head>
+<body>
+    <h1>AJAX Example 1</h1>
+    <p>This page will make an asynchronous AJAX request to the Random User API when loaded. The JavaScript code in the `&lt;script&gt;` block initiates an XMLHttpRequest (XHR) to the endpoint 'https://randomuser.me/api/?results=1'. Upon receiving the response, it checks the status and logs the JSON data to the console if the status is 200 (OK). If the status is not 200, an error message is logged. This example demonstrates how to fetch data from an external API without reloading the entire webpage.</p>
+
+
+</body>
+</html>
