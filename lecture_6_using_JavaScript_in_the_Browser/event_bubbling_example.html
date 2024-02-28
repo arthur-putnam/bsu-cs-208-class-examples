@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Example</title>
+    <style>
+        .container {
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+        .inner {
+            padding: 10px;
+            border: 2px solid #f00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p>This is the container.</p>
+    <div class="inner">
+        <p>This is the inner element.</p>
+    </div>
+</div>
+
+<script>
+    // Add click event handler to container
+    document.querySelector('.container').addEventListener('click', containerClicked);
+
+    // Add click event handler to inner element
+    document.querySelector('.inner').addEventListener('click', innerClicked);
+
+    function containerClicked() {
+        alert("Container clicked!");
+    }
+
+    function innerClicked(event) {
+        alert("Inner clicked, event bubbling!");
+    }
+</script>
+
+</body>
+</html>
