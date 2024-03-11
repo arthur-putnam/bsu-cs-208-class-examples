@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-row{
+            display: flex;
+            flex-direction: row;
+        }
+        .c1{
+            background: #8060f6;
+            margin: 5px;
+            flex: 1;
+            min-width: 300px;
+        }
+        .c2{
+            flex: 2;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="flex">
+        <div class="c1"> my content 1</div>
+        <div class="c1 c2"> my content 2</div>
+        <div class="c1"> my content 3</div>
+    </div>
+
+</body>
+</html>

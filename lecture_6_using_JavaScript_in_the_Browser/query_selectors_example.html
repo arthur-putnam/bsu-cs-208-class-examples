@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector Practice</title>
+    <style>
+        /* Some basic styling for demonstration purposes */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function(){
+            let element = document.createElement('h1');
+            element.style.backgroundColor = 'purple';
+
+            element.innerHTML = "HI"
+
+
+            let bodyTag = document.getElementsByTagName('body')[0];
+
+            bodyTag.append(element)
+        })
+
+
+
+        // debugger;
+
+    </script>
+</head>
+<body>
+<div class="box" id="box1">Box 1</div>
+<div class="box" id="box2">Box 2</div>
+<div class="box" id="box3">Box 3</div>
+
+
+</body>
+</html>

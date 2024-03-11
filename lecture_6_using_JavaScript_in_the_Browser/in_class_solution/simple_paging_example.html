@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 100vh;
+            margin: auto;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            margin: 5px;
+        }
+        main{
+            flex: 1;
+        }
+        .user{
+            display: flex;
+            flex-direction: row;
+            margin: 5px 0;
+        }
+
+        .loading-spinner{
+            width: 100vw;
+            height: 100vh;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.41);
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lds-dual-ring {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+        }
+        .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="w3-container w3-teal">
+        <h1>Users</h1>
+    </header>
+    <main></main>
+    <footer class="w3-container w3-teal">
+        <button id="prev" class="w3-btn w3-blue">Prev</button>
+        <button id="next" class="w3-btn w3-blue">Next</button>
+    </footer >
+    <div class="loading-spinner hide" id="loading"><div class="lds-dual-ring"></div></div>
+
+    <script>
+        let pageCount = 1;
+
+        // Load the first sets users
+        function updatePageWithUsersFromPageX(x){
+
+            document.getElementById('loading').classList.remove('hide');
+            const myPromise = fetch(`https://randomuser.me/api/?page=${x}&results=10&seed=abc`);
+            myPromise.then(response =>{
+                return response.json()
+            }).then(data =>{
+                // What do we do with the data?
+
+                let innerHTML = ""
+                data.results.forEach(personObject =>{
+                    const firstName = personObject.name.first;
+                    const lastName = personObject.name.last;
+                    const imageUrl = personObject.picture.thumbnail;
+
+                    innerHTML += `
+                <div class="user">
+                    <img src="${imageUrl}" alt="">
+                    <ul>
+                        <li>${firstName} ${lastName}</li>
+                    </ul>
+                </div>
+                `
+                });
+                const element = document.querySelector('main');
+                element.innerHTML = innerHTML;
+                document.getElementById('loading').classList.add('hide');
+            })
+        }
+
+        updatePageWithUsersFromPageX(pageCount);
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        prevButton.addEventListener('click', ()=>{
+            // got to the previous page and update the dom
+            if (pageCount > 1)  pageCount--;
+            updatePageWithUsersFromPageX(pageCount)
+        })
+
+        nextButton.addEventListener('click', ()=>{
+            // got to the next page and update the dom
+            pageCount++;
+            updatePageWithUsersFromPageX(pageCount)
+        })
+    </script>
+</body>
+</html>
