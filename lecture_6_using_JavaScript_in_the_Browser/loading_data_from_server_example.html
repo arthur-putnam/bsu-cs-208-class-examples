@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 100vh;
+        }
+        #users{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .user{
+            display: flex;
+            flex-direction: row;
+            padding: 5px
+        }
+        footer{
+            text-align: center;
+            padding: 15px;
+        }
+        footer > button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <header class="w3-container w3-teal">
+            <h1>Users</h1>
+        </header>
+        <section id="users">
+
+        </section>
+        <footer class="w3-container w3-teal">
+            <button class="w3-btn w3-blue" onclick="prev()">Previous</button>
+            <button class="w3-btn w3-blue" onclick="next()">Next</button>
+        </footer>
+    </main>
+
+    <script>
+
+        let currentPage = 1;
+        function loadUsers(page){
+            console.log("Loading Page...")
+            fetch(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`).then(response =>{
+                response.json().then(data => {
+                    console.log(data)
+                    const usersElement = document.getElementById('users');
+                    usersElement.innerHTML = "";
+                    for (let user of data.results) {
+                        const html = `
+                        <div id="user-${user.id.value}" class="user">
+
+                            <img src="${user.picture.thumbnail}" alt="picture of user">
+                             <div class="user-info">
+                                <ul>
+                                    <li><strong>Name</strong> ${user.name.first} ${user.name.last}</li>
+                                </ul>
+                              </div>
+                        </div>
+                        `;
+                        usersElement.innerHTML += html;
+                    }
+                })
+            })
+        }
+        loadUsers(currentPage);
+
+
+        function next(){
+            currentPage++;
+            loadUsers(currentPage);
+        }
+        function prev() {
+            if (currentPage - 1 >= 0) {
+                currentPage--;
+                loadUsers(currentPage);
+            }
+        }
+    </script>
+</body>
+</html>

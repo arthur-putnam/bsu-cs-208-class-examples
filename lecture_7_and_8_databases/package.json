@@ -1,0 +1,14 @@
+{
+  "name": "lecture_7_and_8_databases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "query_database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.9.2"
+  }
+}

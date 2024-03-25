@@ -1,0 +1,7 @@
+extends layouts/main.pug
+block main
+    h1.cool#nice(test-selector=`my-H1`)= title
+    p= date
+    ul
+        each user in users
+            li= user.first_name + ' ' + user.last_name
