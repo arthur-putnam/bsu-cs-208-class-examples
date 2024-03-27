@@ -1,5 +1,5 @@
 const express = require('express');
-const users = require('./constants');
+const users = require('./constants').users;
 
 const router = express.Router();
 
